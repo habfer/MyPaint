@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyPaint
 {
-    class RectangleFabric
+    class RectangleFabric: Fabric
     {
+        public override Shape Create()
+        {
+            return new Rectangle();
+        }
     }
 }

@@ -10,3 +10,9 @@ D:\Учеба\4 сем\MyPaint\MyPaint\obj\Debug\MyPaint.pdb
 D:\Учеба\4 сем\ООТПиСП\MyPaint\MyPaint\bin\Debug\MyPaint.exe.config
 D:\Учеба\4 сем\ООТПиСП\MyPaint\MyPaint\obj\Debug\MyPaint.exe
 D:\Учеба\4 сем\ООТПиСП\MyPaint\MyPaint\obj\Debug\MyPaint.pdb
+D:\Учеба\4 сем\ООТПиСП\MyPaint\MyPaint\bin\Debug\MyPaint.exe
+D:\Учеба\4 сем\ООТПиСП\MyPaint\MyPaint\bin\Debug\MyPaint.pdb
+D:\Учеба\4 сем\ООТПиСП\MyPaint\MyPaint\obj\Debug\MyPaint.csprojResolveAssemblyReference.cache
+D:\Учеба\4 сем\ООТПиСП\MyPaint\MyPaint\obj\Debug\MyPaint.Form1.resources
+D:\Учеба\4 сем\ООТПиСП\MyPaint\MyPaint\obj\Debug\MyPaint.Properties.Resources.resources
+D:\Учеба\4 сем\ООТПиСП\MyPaint\MyPaint\obj\Debug\MyPaint.csproj.GenerateResource.Cache

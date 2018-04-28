@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.RadioPanel = new System.Windows.Forms.Panel();
-            this.Triangle = new System.Windows.Forms.RadioButton();
             this.Circle = new System.Windows.Forms.RadioButton();
             this.Ellipse = new System.Windows.Forms.RadioButton();
             this.Square = new System.Windows.Forms.RadioButton();
             this.Rectangle = new System.Windows.Forms.RadioButton();
             this.Line = new System.Windows.Forms.RadioButton();
             this.Selecting = new System.Windows.Forms.Label();
-            this.ClearBtn = new System.Windows.Forms.Button();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.DrawAllBtn = new System.Windows.Forms.Button();
             this.RadioPanel.SuspendLayout();
@@ -45,7 +43,6 @@
             // 
             // RadioPanel
             // 
-            this.RadioPanel.Controls.Add(this.Triangle);
             this.RadioPanel.Controls.Add(this.Circle);
             this.RadioPanel.Controls.Add(this.Ellipse);
             this.RadioPanel.Controls.Add(this.Square);
@@ -54,19 +51,8 @@
             this.RadioPanel.Controls.Add(this.Selecting);
             this.RadioPanel.Location = new System.Drawing.Point(1, 0);
             this.RadioPanel.Name = "RadioPanel";
-            this.RadioPanel.Size = new System.Drawing.Size(179, 186);
+            this.RadioPanel.Size = new System.Drawing.Size(179, 162);
             this.RadioPanel.TabIndex = 0;
-            // 
-            // Triangle
-            // 
-            this.Triangle.AutoSize = true;
-            this.Triangle.Location = new System.Drawing.Point(15, 156);
-            this.Triangle.Name = "Triangle";
-            this.Triangle.Size = new System.Drawing.Size(90, 17);
-            this.Triangle.TabIndex = 6;
-            this.Triangle.TabStop = true;
-            this.Triangle.Text = "Треугольник";
-            this.Triangle.UseVisualStyleBackColor = true;
             // 
             // Circle
             // 
@@ -78,6 +64,7 @@
             this.Circle.TabStop = true;
             this.Circle.Text = "Круг";
             this.Circle.UseVisualStyleBackColor = true;
+            this.Circle.CheckedChanged += new System.EventHandler(this.Circle_CheckedChanged);
             // 
             // Ellipse
             // 
@@ -89,6 +76,7 @@
             this.Ellipse.TabStop = true;
             this.Ellipse.Text = "Эллипс";
             this.Ellipse.UseVisualStyleBackColor = true;
+            this.Ellipse.CheckedChanged += new System.EventHandler(this.Ellipse_CheckedChanged);
             // 
             // Square
             // 
@@ -100,6 +88,7 @@
             this.Square.TabStop = true;
             this.Square.Text = "Квадрат";
             this.Square.UseVisualStyleBackColor = true;
+            this.Square.CheckedChanged += new System.EventHandler(this.Square_CheckedChanged);
             // 
             // Rectangle
             // 
@@ -111,6 +100,7 @@
             this.Rectangle.TabStop = true;
             this.Rectangle.Text = "Прямоугольник";
             this.Rectangle.UseVisualStyleBackColor = true;
+            this.Rectangle.CheckedChanged += new System.EventHandler(this.Rectangle_CheckedChanged);
             // 
             // Line
             // 
@@ -122,6 +112,7 @@
             this.Line.TabStop = true;
             this.Line.Text = "Линия";
             this.Line.UseVisualStyleBackColor = true;
+            this.Line.CheckedChanged += new System.EventHandler(this.Line_CheckedChanged);
             // 
             // Selecting
             // 
@@ -133,27 +124,22 @@
             this.Selecting.TabIndex = 1;
             this.Selecting.Text = "Выбрать фигуру";
             // 
-            // ClearBtn
-            // 
-            this.ClearBtn.Location = new System.Drawing.Point(105, 192);
-            this.ClearBtn.Name = "ClearBtn";
-            this.ClearBtn.Size = new System.Drawing.Size(75, 23);
-            this.ClearBtn.TabIndex = 1;
-            this.ClearBtn.Text = "Очистить";
-            this.ClearBtn.UseVisualStyleBackColor = true;
-            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
-            // 
             // PictureBox
             // 
+            this.PictureBox.BackColor = System.Drawing.SystemColors.Window;
             this.PictureBox.Location = new System.Drawing.Point(186, 9);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Size = new System.Drawing.Size(960, 607);
             this.PictureBox.TabIndex = 2;
             this.PictureBox.TabStop = false;
+            this.PictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
+            this.PictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseDown);
+            this.PictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseMove);
+            this.PictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseUp);
             // 
             // DrawAllBtn
             // 
-            this.DrawAllBtn.Location = new System.Drawing.Point(3, 192);
+            this.DrawAllBtn.Location = new System.Drawing.Point(3, 168);
             this.DrawAllBtn.Name = "DrawAllBtn";
             this.DrawAllBtn.Size = new System.Drawing.Size(75, 23);
             this.DrawAllBtn.TabIndex = 3;
@@ -168,7 +154,6 @@
             this.ClientSize = new System.Drawing.Size(1158, 636);
             this.Controls.Add(this.DrawAllBtn);
             this.Controls.Add(this.PictureBox);
-            this.Controls.Add(this.ClearBtn);
             this.Controls.Add(this.RadioPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
@@ -188,9 +173,7 @@
         private System.Windows.Forms.RadioButton Ellipse;
         private System.Windows.Forms.RadioButton Square;
         private System.Windows.Forms.RadioButton Rectangle;
-        private System.Windows.Forms.RadioButton Triangle;
         private System.Windows.Forms.RadioButton Circle;
-        private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.PictureBox PictureBox;
         private System.Windows.Forms.Button DrawAllBtn;
     }

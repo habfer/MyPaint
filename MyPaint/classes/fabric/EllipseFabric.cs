@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyPaint
 {
-    class EllipseFabric
+    class EllipseFabric: Fabric
     {
+        public override Shape Create()
+        {
+            return new Ellipse();
+        }
     }
 }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyPaint
 {
-    class LineFabric
+    class LineFabric: Fabric
     {
+        public override Shape Create()
+        {
+            return new Line();
+        }
     }
 }

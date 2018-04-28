@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MyPaint
 {
-    class Fabric
+    public abstract class Fabric
     {
+        public abstract Shape Create();
     }
 }

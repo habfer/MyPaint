@@ -14,14 +14,13 @@ namespace MyPaint
     {
         public Bitmap bmap;
         public Graphics graphics;
+        private Fabric shapeCreator;
 
         public Form1()
         {
             InitializeComponent();
             bmap = new Bitmap(PictureBox.Size.Width, PictureBox.Size.Height);
             graphics = Graphics.FromImage(bmap);
-            graphics.Clear(Color.White);
-            PictureBox.Image = bmap;
         }
 
         private void DrawAllBtn_Click(object sender, EventArgs e)
@@ -41,10 +40,89 @@ namespace MyPaint
             PictureBox.Image = bmap;
         }
 
-        private void ClearBtn_Click(object sender, EventArgs e)
+        ShapeList shapeList = new ShapeList();
+
+        Color penColor = Color.Black;
+        Pen pen = new Pen(Color.Black, 2);
+
+        public bool isClicked = false;
+
+        Point X;
+        Point Y;
+        Shape shape;
+
+        private void PictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            graphics.Clear(Color.White);
-            PictureBox.Image = bmap;
+            if (shapeCreator != null)
+            {
+                shape = shapeCreator.Create();
+                pen = new Pen(Color.Black, 2);
+                shape.Pen = pen;
+                isClicked = true;
+                X = new Point(e.X, e.Y);
+            }
         }
+
+        private void PictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            isClicked = false;
+            if (shape != null)
+            {
+                shapeList.myList.Add(shape);
+            }
+        }
+
+        private void PictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isClicked)
+            {
+                Y = new Point(e.X, e.Y);
+                PictureBox.Invalidate();
+            }
+        }
+
+        public void PictureBox_Paint(object sender, PaintEventArgs e)
+        {
+            if (shape != null)
+            {
+                shape.StartPoint = X;
+                shape.FinishPoint = Y;
+                pen = new Pen(penColor, 2);
+                shape.Draw(e.Graphics, shape.Pen, shape.StartPoint, shape.FinishPoint);
+                if (shapeList.myList.Count > 0)
+                {
+                    foreach (var fig in shapeList.myList)
+                    {
+                        fig.Draw(e.Graphics, fig.Pen, fig.StartPoint, fig.FinishPoint);
+                    }
+                }
+            }
+        }
+
+        private void Line_CheckedChanged(object sender, EventArgs e)
+        {
+            shapeCreator = new LineFabric();
+        }
+
+        private void Rectangle_CheckedChanged(object sender, EventArgs e)
+        {
+            shapeCreator = new RectangleFabric();
+        }
+
+        private void Square_CheckedChanged(object sender, EventArgs e)
+        {
+            shapeCreator = new SquareFabric();
+        }
+
+        private void Ellipse_CheckedChanged(object sender, EventArgs e)
+        {
+            shapeCreator = new EllipseFabric();
+        }
+
+        private void Circle_CheckedChanged(object sender, EventArgs e)
+        {
+            shapeCreator = new CircleFabric();
+        }
+
     }
 }
