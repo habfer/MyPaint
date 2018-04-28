@@ -34,8 +34,8 @@ namespace MyPaint
             shapeList.myList.Add(line);
             shapeList.myList.Add(square);
             shapeList.myList.Add(rectangle);
-            shapeList.myList.Add(circle);
             shapeList.myList.Add(ellipse);
+            shapeList.myList.Add(circle);
             shapeList.Draw(graphics);
             PictureBox.Image = bmap;
         }
@@ -56,7 +56,7 @@ namespace MyPaint
             if (shapeCreator != null)
             {
                 shape = shapeCreator.Create();
-                pen = new Pen(Color.Black, 2);
+                pen = new Pen(penColor, 2);
                 shape.Pen = pen;
                 isClicked = true;
                 X = new Point(e.X, e.Y);
@@ -124,5 +124,11 @@ namespace MyPaint
             shapeCreator = new CircleFabric();
         }
 
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            graphics.Clear(Color.White);
+            shapeList.myList.Clear();
+            PictureBox.Image = null;
+        }
     }
 }
