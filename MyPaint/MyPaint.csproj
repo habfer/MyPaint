@@ -46,12 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\fabric\CircleFabric.cs" />
-    <Compile Include="classes\fabric\EllipseFabric.cs" />
-    <Compile Include="classes\fabric\Fabric.cs" />
-    <Compile Include="classes\fabric\LineFabric.cs" />
-    <Compile Include="classes\fabric\RectangleFabric.cs" />
-    <Compile Include="classes\fabric\SquareFabric.cs" />
+    <Compile Include="classes\factory\CircleFabric.cs" />
+    <Compile Include="classes\factory\EllipseFabric.cs" />
+    <Compile Include="classes\factory\Fabric.cs" />
+    <Compile Include="classes\factory\LineFabric.cs" />
+    <Compile Include="classes\factory\RectangleFabric.cs" />
+    <Compile Include="classes\factory\SquareFabric.cs" />
+    <Compile Include="classes\factory\TriangleFabric.cs" />
     <Compile Include="classes\shapes\Circle.cs" />
     <Compile Include="classes\shapes\Ellipse.cs" />
     <Compile Include="classes\shapes\Line.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="classes\shapes\Shape.cs" />
     <Compile Include="classes\shapes\ShapeList.cs" />
     <Compile Include="classes\shapes\Square.cs" />
+    <Compile Include="classes\shapes\Triangle.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

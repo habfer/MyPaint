@@ -12,17 +12,17 @@ namespace MyPaint
     {
         public override void Draw(Graphics g, Pen pen, Point StartPoint, Point FinishPoint)
         {
-            int Width = Math.Abs(FinishPoint.X - StartPoint.X);
+            int width = Math.Abs(FinishPoint.X - StartPoint.X);
 
             if ((FinishPoint.Y < StartPoint.Y) && (FinishPoint.X < StartPoint.X))
             {
-                StartPoint = new Point(FinishPoint.X, StartPoint.Y - Width);
+                StartPoint = new Point(FinishPoint.X, StartPoint.Y - width);
             }
             else
             {
                 if ((FinishPoint.Y < StartPoint.Y) && (FinishPoint.X > StartPoint.X))
                 {
-                    StartPoint = new Point(StartPoint.X, StartPoint.Y - Width);
+                    StartPoint = new Point(StartPoint.X, StartPoint.Y - width);
                 }
                 else
                 {
@@ -32,7 +32,7 @@ namespace MyPaint
                     }
                 }
             }
-            g.DrawRectangle(pen, StartPoint.X, StartPoint.Y, Width, Width);
+            g.DrawRectangle(pen, StartPoint.X, StartPoint.Y, width, width);
         }
     }
 }

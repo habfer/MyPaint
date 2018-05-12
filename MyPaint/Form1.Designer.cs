@@ -38,12 +38,14 @@
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.DrawAllBtn = new System.Windows.Forms.Button();
             this.ClearBtn = new System.Windows.Forms.Button();
+            this.Triangle = new System.Windows.Forms.RadioButton();
             this.RadioPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // RadioPanel
             // 
+            this.RadioPanel.Controls.Add(this.Triangle);
             this.RadioPanel.Controls.Add(this.Circle);
             this.RadioPanel.Controls.Add(this.Ellipse);
             this.RadioPanel.Controls.Add(this.Square);
@@ -52,7 +54,7 @@
             this.RadioPanel.Controls.Add(this.Selecting);
             this.RadioPanel.Location = new System.Drawing.Point(1, 0);
             this.RadioPanel.Name = "RadioPanel";
-            this.RadioPanel.Size = new System.Drawing.Size(179, 162);
+            this.RadioPanel.Size = new System.Drawing.Size(179, 177);
             this.RadioPanel.TabIndex = 0;
             // 
             // Circle
@@ -140,7 +142,7 @@
             // 
             // DrawAllBtn
             // 
-            this.DrawAllBtn.Location = new System.Drawing.Point(3, 168);
+            this.DrawAllBtn.Location = new System.Drawing.Point(3, 183);
             this.DrawAllBtn.Name = "DrawAllBtn";
             this.DrawAllBtn.Size = new System.Drawing.Size(75, 23);
             this.DrawAllBtn.TabIndex = 3;
@@ -150,13 +152,25 @@
             // 
             // ClearBtn
             // 
-            this.ClearBtn.Location = new System.Drawing.Point(105, 168);
+            this.ClearBtn.Location = new System.Drawing.Point(105, 183);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(75, 23);
             this.ClearBtn.TabIndex = 4;
             this.ClearBtn.Text = "Очистить";
             this.ClearBtn.UseVisualStyleBackColor = true;
             this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
+            // 
+            // Triangle
+            // 
+            this.Triangle.AutoSize = true;
+            this.Triangle.Location = new System.Drawing.Point(15, 156);
+            this.Triangle.Name = "Triangle";
+            this.Triangle.Size = new System.Drawing.Size(90, 17);
+            this.Triangle.TabIndex = 6;
+            this.Triangle.TabStop = true;
+            this.Triangle.Text = "Треугольник";
+            this.Triangle.UseVisualStyleBackColor = true;
+            this.Triangle.CheckedChanged += new System.EventHandler(this.Triangle_CheckedChanged);
             // 
             // Form1
             // 
@@ -189,6 +203,7 @@
         private System.Windows.Forms.PictureBox PictureBox;
         private System.Windows.Forms.Button DrawAllBtn;
         private System.Windows.Forms.Button ClearBtn;
+        private System.Windows.Forms.RadioButton Triangle;
     }
 }
 

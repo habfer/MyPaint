@@ -12,9 +12,9 @@ namespace MyPaint
     {
         public override void Draw(Graphics g, Pen pen, Point StartPoint, Point FinishPoint)
         {
-            int Height = FinishPoint.Y - StartPoint.Y;
-            int Width = FinishPoint.X - StartPoint.X;
-            g.DrawEllipse(pen, StartPoint.X, StartPoint.Y, Width, Height);
+            int height = FinishPoint.Y - StartPoint.Y;
+            int width = FinishPoint.X - StartPoint.X;
+            g.DrawEllipse(pen, StartPoint.X, StartPoint.Y, width, height);
         }
     }
 }

@@ -12,15 +12,17 @@ namespace MyPaint
     {
         public override void Draw(Graphics g, Pen pen, Point StartPoint, Point FinishPoint)
         {
-            int Width = FinishPoint.X - StartPoint.X;
-            if (((Width > 0) && (FinishPoint.Y < StartPoint.Y)) || ((Width < 0) && (FinishPoint.Y > StartPoint.Y)))
+            int height = 0;
+            int width = FinishPoint.X - StartPoint.X;
+            if (((width > 0) && (FinishPoint.Y < StartPoint.Y)) || ((width < 0) && (FinishPoint.Y > StartPoint.Y)))
             {
-                g.DrawEllipse(pen, StartPoint.X, StartPoint.Y, Width, -Width);
+                height = -width;
             }
             else
             {
-                g.DrawEllipse(pen, StartPoint.X, StartPoint.Y, Width, Width);
+                height = width;
             }
+            g.DrawEllipse(pen, StartPoint.X, StartPoint.Y, width, height);
         }
     }
 }

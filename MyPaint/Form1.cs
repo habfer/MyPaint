@@ -130,5 +130,10 @@ namespace MyPaint
             shapeList.myList.Clear();
             PictureBox.Image = null;
         }
+
+        private void Triangle_CheckedChanged(object sender, EventArgs e)
+        {
+            shapeCreator = new TriangleFabric();
+        }
     }
 }
