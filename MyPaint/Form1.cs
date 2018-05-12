@@ -25,6 +25,7 @@ namespace MyPaint
 
         private void DrawAllBtn_Click(object sender, EventArgs e)
         {
+           // Triangle triangle = new Triangle();
             Circle circle = new Circle();
             Ellipse ellipse = new Ellipse();
             Line line = new Line();
@@ -36,6 +37,7 @@ namespace MyPaint
             shapeList.myList.Add(rectangle);
             shapeList.myList.Add(ellipse);
             shapeList.myList.Add(circle);
+           // shapeList.myList.Add(triangle);
             shapeList.Draw(graphics);
             PictureBox.Image = bmap;
         }
@@ -56,7 +58,6 @@ namespace MyPaint
             if (shapeCreator != null)
             {
                 shape = shapeCreator.Create();
-                pen = new Pen(penColor, 2);
                 shape.Pen = pen;
                 isClicked = true;
                 X = new Point(e.X, e.Y);
@@ -87,7 +88,6 @@ namespace MyPaint
             {
                 shape.StartPoint = X;
                 shape.FinishPoint = Y;
-                pen = new Pen(penColor, 2);
                 shape.Draw(e.Graphics, shape.Pen, shape.StartPoint, shape.FinishPoint);
                 if (shapeList.myList.Count > 0)
                 {
