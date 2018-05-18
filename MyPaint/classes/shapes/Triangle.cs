@@ -11,15 +11,13 @@ namespace MyPaint
     {
         public override void Draw(Graphics g, Pen pen, Point StartPoint, Point FinishPoint)
         {
-            Point MidPoint = new Point();
-            MidPoint.X = FinishPoint.X - StartPoint.X;
-            MidPoint.Y = FinishPoint.Y - StartPoint.Y;
+            Point MidPoint = new Point(StartPoint.X + 200, StartPoint.Y);
             Point[] curvePoints =
-             {
+            {
                  StartPoint,
                  MidPoint,
                  FinishPoint,
-             };
+            };
             g.DrawPolygon(pen, curvePoints);
         }
     }
